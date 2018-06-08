@@ -11,6 +11,18 @@ body {
   text-align: center;
 }
 
+h1 {
+  font-size: 48px;
+}
+
+h2 {
+  font-size: 40px;
+}
+
+p, div, li, ul {
+  font-size: 32px;
+}
+
 ul {
   list-style: none;
 

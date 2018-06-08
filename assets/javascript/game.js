@@ -72,12 +72,15 @@ window.onload = function () {
         }
       }
     }
-  
+
+    //i created this using buttons to challenge myself with another event listener, but
+    //i also want to create an array that will take inputs on both click 
+    //and onkey events so that neither can be duplicated
     var gameLetters = function () {
       list.onclick = function () {
         var guess = (this.innerHTML);
         this.setAttribute("class", "btn btn-light");
-        this.onclick = null;
+        this.onclick = null; //makes it so you can't click the letter again
         for (var i = 0; i < newWord.length; i++) {
           if (newWord[i] === guess) {
             guesses[i].innerHTML = guess;
@@ -97,6 +100,7 @@ window.onload = function () {
           goodGuess.play();
           scoreChecker();
         }
+
       }
     }
     
@@ -104,7 +108,8 @@ window.onload = function () {
     // Begin a new game
     newGame = function () {
       word = ["super mario","luigi","toad","peach","wario","bowser","koopa troopa","goomba",
-      "donkey kong","samus","starfox","waluigi","link","zelda","ganondorf","kirby","yoshi"
+      "donkey kong","samus aran","starfox","waluigi","link","zelda","ganondorf","kirby","yoshi", 
+      "captain falcon", "diddy kong", "little mac", "mega man"
     ];
   
       newWord = word[Math.floor(Math.random() * word.length)];
@@ -125,8 +130,9 @@ window.onload = function () {
   
         var hints = ["The Original Plumber", "The plumber's brother", "A Princess' servant", "The original princess", 
           "Mario's rival", "The original villain", "turtle henchman","evil shiitake mushroom", "monkey business",
-          "first female video game character","spaceship animal","Luigi's rival","an elf from the woods",
-          "princess of hyrule","villain of hyrule","all puffed up","green dinosaur"
+          "first female lead character","spaceship animal","Luigi's rival","an elf from the woods",
+          "princess of hyrule","villain of hyrule","all puffed up","green dinosaur", "speed demon", "jungle sidekick",
+          "beat up Mike Tyson", "futureistic robot boy"
         ];
   
       var hintIndex = word.indexOf(newWord);
