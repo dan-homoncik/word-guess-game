@@ -56,13 +56,19 @@ window.onload = function () {
     var scoreChecker = function () {
       showLives.innerHTML = "You have " + lives + " lives";
       if (lives < 1) {
+        var loser = document.createElement("audio");
+        loser.setAttribute("src", "assets/sounds/smb_mariodie.wav");
+        loser.play();
         showLives.innerHTML = "Game Over";
         gameReset();
       }
       for (var i = 0; i < guesses.length; i++) {
         if (counter + space === guesses.length) {
-            
+          var winner = document.createElement("audio");
+          winner.setAttribute("src", "assets/sounds/smb_stage_clear.wav");
+          winner.play();
           showLives.innerHTML = "You Win!";
+
         }
       }
     }
@@ -80,9 +86,15 @@ window.onload = function () {
         }
         var j = (newWord.indexOf(guess));
         if (j === -1) {
+          var badGuess = document.createElement("audio");
+          badGuess.setAttribute("src", "assets/sounds/smb_pipe.wav");
+          badGuess.play()
           lives--;
           scoreChecker();
         } else {
+          var goodGuess = document.createElement("audio");
+          goodGuess.setAttribute("src", "assets/sounds/smb_coin.wav");
+          goodGuess.play();
           scoreChecker();
         }
       }
