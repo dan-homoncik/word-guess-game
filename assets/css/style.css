@@ -1,0 +1,42 @@
+@font-face {
+  font-family: SuperPlumberBrothers;
+  src: url(../fonts/SuperPlumberBrothers.ttf);
+}
+
+body {
+  background-image: url(../images/nintendo.png);
+  background-position-x: center;
+  background-repeat: no-repeat;
+  font-family: SuperPlumberBrothers;
+  text-align: center;
+}
+
+ul {
+  list-style: none;
+
+}
+
+#alphabet {
+  margin: 15px auto;
+}
+
+#alphabet li {
+  float:left;
+  list-style:none;
+  width:35px;
+  height:30px;
+}
+
+#pickedWord {
+  margin: 0;
+  padding: 0;
+  display:block;
+}
+
+#pickedWord li {
+  position: relative;
+  list-style: none;
+  margin: 0;
+  display: inline-block;
+  padding: 0 10px;
+}
