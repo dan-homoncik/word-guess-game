@@ -21,6 +21,13 @@ window.onload = function () {
     var buttons = function () {
       myButtons = document.getElementById("buttons");
       letters = document.createElement("ul");
+      
+      //the list varable is the paramount of the creation of my alphabet li
+      //I was looking for a means to also include the onkeyup event listener to the click event
+      //after successfully implementing click events
+      //i didn't have much success. I've made comments in areas where i tried to attach the
+      //event listeners to the list variable to work with the multiple events
+
       for (var i = 0; i < alphabet.length; i++) {
         letters.id = "alphabet";
         list = document.createElement("li");
@@ -29,7 +36,10 @@ window.onload = function () {
         gameLetters();
         myButtons.appendChild(letters);
         letters.appendChild(list);
+        //tried to put the event listener in the loop, but it didn't display the alphabet li properly
       }
+      // tried to put the event listeners here after the loop, but it was executing on listeners
+      // before the user did anything and wasn't populating the hidden word
     }    
  
     var hiddenWord = function () {
@@ -73,10 +83,10 @@ window.onload = function () {
       }
     }
 
-    //i created this using buttons to challenge myself with another event listener, but
-    //i also want to create an array that will take inputs on both click 
-    //and onkey events so that neither can be duplicated
+    
+
     var gameLetters = function () {
+    //tried separating the two events in this area, but the onkeyup function just wasn't working
       list.onclick = function () {
         var guess = (this.innerHTML);
         this.setAttribute("class", "btn btn-light");
@@ -102,6 +112,10 @@ window.onload = function () {
         }
 
       }
+
+
+      // tried placing the onkeyup function here by almost mirroring the code in the click event
+      // know this isn't good practice but tried it anyway as a last resort that i could think of
     }
     
       
